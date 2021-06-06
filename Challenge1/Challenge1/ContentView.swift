@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var initialValue = ""
-    @State private var initialUnit = "Celsius"
+    @State private var initialUnit = 1
     @State private var convertedValue = ""
-    @State private var convertedUnit = "Celsius"
+    @State private var convertedUnit = 1
     
     let units = ["Celsius", "Fahrenheit", "Kelvin"]
     
@@ -20,6 +20,8 @@ struct ContentView: View {
             Form {
                 Section {
                     TextField("Initial value", text: $initialValue)
+                        .keyboardType(.decimalPad)
+                    
                     Picker("Initial unit", selection: $initialUnit) {
                         ForEach(0 ..< units.count) {
                             Text("\(self.units[$0])")
@@ -29,7 +31,8 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    TextField("Converted value", text: $convertedValue).disabled(true)
+                    TextField("Converted value", text: $convertedValue)
+                        .disabled(true)
                     
                     Picker("Unit to convert", selection: $convertedUnit) {
                         ForEach(0 ..< units.count) {
