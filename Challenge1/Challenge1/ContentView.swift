@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var initialValue = ""
     @State private var initialUnit = 1
-    @State private var convertedValue = ""
     @State private var convertedUnit = 1
     
     let units = ["Celsius", "Fahrenheit", "Kelvin"]
