@@ -15,58 +15,43 @@ struct ContentView: View {
     let units = ["Celsius", "Fahrenheit", "Kelvin"]
     
     var finalValue: Double {
+        let initialValueInCelsius = initialValueInCelsius()
+        let result: Double
+        
+        switch convertedUnit {
+        case 0:
+            result = initialValueInCelsius
+        case 1:
+            result = Measurement(value: initialValueInCelsius, unit: UnitTemperature.celsius).converted(to: .fahrenheit).value
+        case 2:
+            result = Measurement(value: initialValueInCelsius, unit: UnitTemperature.celsius).converted(to: .kelvin).value
+        default:
+            result = initialValueInCelsius
+        }
+        
+        return result
+    }
+    
+    func initialValueInCelsius() -> Double {
+        let initialValue = Double(initialValue) ?? 0
+        var result: Double
+        
         switch initialUnit {
         case 0:
-            return celsiusTo()
+            result = initialValue
         case 1:
-            return fahrenheitTo()
+            let fahrenheit = Measurement(value: initialValue,
+                                         unit: UnitTemperature.fahrenheit)
+            result = fahrenheit.converted(to: .celsius).value
         case 2:
-            return kelvinTo()
+            let kelvin = Measurement(value: initialValue,
+                                     unit: UnitTemperature.kelvin)
+            result = kelvin.converted(to: .celsius).value
         default:
-            return 0
+            result = initialValue
         }
-    }
-    
-    func celsiusTo() -> Double {
-        let initialValue = Double(initialValue) ?? 0
-        switch convertedUnit {
-        case 0:
-            return initialValue
-        case 1:
-            return initialValue * (9.0/5) + 32
-        case 2:
-            return initialValue + 273.15
-        default:
-            return 0
-        }
-    }
-    
-    func fahrenheitTo() -> Double {
-        let initialValue = Double(initialValue) ?? 0
-        switch convertedUnit {
-        case 0:
-            return (initialValue - 32) * (5.0/9)
-        case 1:
-            return initialValue
-        case 2:
-            return (initialValue - 32) * (5.0/9) + 273.15
-        default:
-            return 0
-        }
-    }
-    
-    func kelvinTo() -> Double {
-        let initialValue = Double(initialValue) ?? 0
-        switch convertedUnit {
-        case 0:
-            return initialValue - 273.15
-        case 1:
-            return (initialValue - 273.15) * (9.0/5) + 32
-        case 2:
-            return initialValue
-        default:
-            return 0
-        }
+        
+        return result
     }
     
     var body: some View {
