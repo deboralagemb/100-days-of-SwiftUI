@@ -26,6 +26,11 @@ struct ContentView: View {
         return amountPerPerson
     }
     
+    var totalForTheCheck: Double {
+        let peopleCount = Double(numberOfPeople + 2)
+        return totalPerPerson * peopleCount
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -51,6 +56,10 @@ struct ContentView: View {
                 
                 Section(header: Text("Amount per person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
+                }
+                
+                Section(header: Text("Amount for the check")) {
+                    Text("$\(totalForTheCheck, specifier: "%.2f")")
                 }
             }
             .navigationBarTitle("WeSplit")
