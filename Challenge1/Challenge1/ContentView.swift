@@ -15,6 +15,61 @@ struct ContentView: View {
     
     let units = ["Celsius", "Fahrenheit", "Kelvin"]
     
+    var finalValue: Double {
+        switch initialUnit {
+        case 0:
+            return celsiusTo()
+        case 1:
+            return fahrenheitTo()
+        case 2:
+            return kelvinTo()
+        default:
+            return 0
+        }
+    }
+    
+    func celsiusTo() -> Double {
+        let initialValue = Double(initialValue) ?? 0
+        switch convertedUnit {
+        case 0:
+            return initialValue
+        case 1:
+            return initialValue * (9.0/5) + 32
+        case 2:
+            return initialValue + 273.15
+        default:
+            return 0
+        }
+    }
+    
+    func fahrenheitTo() -> Double {
+        let initialValue = Double(initialValue) ?? 0
+        switch convertedUnit {
+        case 0:
+            return (initialValue - 32) * (5.0/9)
+        case 1:
+            return initialValue
+        case 2:
+            return (initialValue - 32) * (5.0/9) + 273.15
+        default:
+            return 0
+        }
+    }
+    
+    func kelvinTo() -> Double {
+        let initialValue = Double(initialValue) ?? 0
+        switch convertedUnit {
+        case 0:
+            return initialValue - 273.15
+        case 1:
+            return (initialValue - 273.15) * (9.0/5) + 32
+        case 2:
+            return initialValue
+        default:
+            return 0
+        }
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -30,9 +85,8 @@ struct ContentView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 
-                Section {
-                    TextField("Converted value", text: $convertedValue)
-                        .disabled(true)
+                Section(header: Text("Converted value")) {
+                    Text("\(finalValue, specifier: "%.2f")")
                     
                     Picker("Unit to convert", selection: $convertedUnit) {
                         ForEach(0 ..< units.count) {
