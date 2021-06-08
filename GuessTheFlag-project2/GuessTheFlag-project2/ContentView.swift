@@ -12,18 +12,26 @@ struct ContentView: View {
     var correctAnswer = Int.random(in: 0...2)
     
     var body: some View {
-        VStack(spacing: 30) {
-            VStack {
-                Text("Tap the flag ")
-                Text(countries[correctAnswer])
-            }
+        ZStack {
+            Color.blue.edgesIgnoringSafeArea(.all)
             
-            ForEach( 0 ..< 3) { number in
-                Button(action: {
-                    // flag was tapped
-                }) {
-                    Image(self.countries[number]).renderingMode(.original)
+            VStack(spacing: 30) {
+                VStack {
+                    Text("Tap the flag ")
+                        .foregroundColor(.white)
+                    Text(countries[correctAnswer])
+                        .foregroundColor(.white)
                 }
+                
+                ForEach( 0 ..< 3) { number in
+                    Button(action: {
+                        // flag was tapped
+                    }) {
+                        Image(self.countries[number]).renderingMode(.original)
+                    }
+                }
+                
+                Spacer()
             }
         }
     }
