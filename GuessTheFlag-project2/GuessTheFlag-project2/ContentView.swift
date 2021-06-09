@@ -42,6 +42,10 @@ struct ContentView: View {
                     }
                 }
                 
+                Text("Score: \(totalScore)")
+                    .foregroundColor(.white)
+                    .fontWeight(.semibold)
+                
                 Spacer()
             }
             .alert(isPresented: $showingScore) {
