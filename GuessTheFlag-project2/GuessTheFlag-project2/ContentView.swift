@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct FlagImage: ViewModifier {
-    func body(content: Content, image: Image) -> some View {
+    func body(content: Content) -> some View {
         content
-            .renderingMode(.original)
             .clipShape(Capsule())
             .overlay(Capsule().stroke(Color.black, lineWidth: 1))
             .shadow(color: .black, radius: 2)
+    }
+}
+
+extension View {
+    func imageModifier() -> some View {
+        self.modifier(FlagImage())
     }
 }
 
@@ -47,9 +52,7 @@ struct ContentView: View {
                     }) {
                         Image(self.countries[number])
                             .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                            .shadow(color: .black, radius: 2)
+                            .imageModifier()
                     }
                 }
                 
