@@ -45,6 +45,7 @@ struct ContentView: View {
                             }
                             .frame(width: 100, height: 100, alignment: .center)
                             .background(Color.gray)
+                            .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
                             .cornerRadius(10)
                         }
