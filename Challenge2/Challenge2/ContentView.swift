@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+enum Result {
+    case win, tie, lose
+}
+
 struct ContentView: View {
     private var moves: [String] = ["Rock", "Paper", "Scissors"]
-    @State private var shouldWin: Bool = Bool.random()
+    @State private var shouldWin: Result = Bool.random() ? .win : .lose
     @State private var moveIndex: Int = Int.random(in: 0 ..< 3)
     @State private var score: Int = 0
     
@@ -24,13 +28,13 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    Text(shouldWin ? "Choose an option to beat:" : "Choose an option to be defeated by:")
+                    Text(shouldWin == .win ? "Choose an option to beat:" : "Choose an option to be defeated by:")
                         .frame(alignment: .center)
                         .font(.system(size: 22))
                         .foregroundColor(.white)
 
                     Text(moves[moveIndex])
-                        .foregroundColor(shouldWin ? .green : .red)
+                        .foregroundColor(shouldWin == .win ? .green : .red)
                         .frame(alignment: .center)
                         .font(.system(size: 22, weight: .bold))
                 
@@ -45,7 +49,7 @@ struct ContentView: View {
                                     score += 1
                                 }
                                 
-                                shouldWin = Bool.random()
+                                shouldWin = Bool.random() ? .win : .lose
                                 moveIndex = Int.random(in: 0 ..< 3)
                             }
                             .frame(width: 100, height: 100, alignment: .center)
@@ -64,17 +68,14 @@ struct ContentView: View {
         .preferredColorScheme(.dark)
     }
     
-    func didWon(indexTapped: Int, indexPC: Int) -> Bool {
+    func didWon(indexTapped: Int, indexPC: Int) -> Result {
         if indexTapped == indexPC {
-            print("empate")
-            return false
+            return .tie
         } else if moves[(indexTapped + 1) % 3] == moves[indexPC] {
-            print("perder")
-            return false
+            return .lose
         }
         
-        print("ganhar")
-        return true
+        return .win
     }
     
 }
