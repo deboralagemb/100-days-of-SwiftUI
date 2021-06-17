@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var shouldWin: Result = Bool.random() ? .win : .lose
     @State private var moveIndex: Int = Int.random(in: 0 ..< 3)
     @State private var score: Int = 0
+    @State private var showingAlert: Bool = false
     
     var body: some View {
         NavigationView {
@@ -24,7 +25,7 @@ struct ContentView: View {
                     Text("Score: \(score)")
                         .frame(alignment: .leading)
                         .font(.system(size: 30))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.orange)
                     
                     Spacer()
                     
@@ -42,30 +43,64 @@ struct ContentView: View {
                     
                     HStack {
                         ForEach(0 ..< moves.count) { index in
-                            Button(moves[index]) {
-                                let won = didWon(indexTapped: index, indexPC: moveIndex)
-                                
-                                if won == shouldWin {
-                                    score += 1
+                            Button(action: {
+                                didTapButtonAt(index)
+                            }) {
+                                VStack(spacing: 10) {
+                                    if index == 0 {
+                                        Text("👊")
+                                            .font(.system(size: 40))
+                                    } else if index == 1 {
+                                        Text("✋")
+                                            .font(.system(size: 40))
+                                    } else {
+                                        Text("✌️")
+                                            .font(.system(size: 40))
+                                    }
+                                    Text(moves[index])
                                 }
-                                
-                                shouldWin = Bool.random() ? .win : .lose
-                                moveIndex = Int.random(in: 0 ..< 3)
                             }
                             .frame(width: 100, height: 100, alignment: .center)
                             .background(Color.gray)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
                             .cornerRadius(10)
+                            .alert(isPresented: $showingAlert) {
+                                Alert(title: Text("Nice game!"), message: Text("Final score: \(score)"), dismissButton: .default(Text("Okidoki")) {
+                                    self.finishTheGame()
+                                    self.showingAlert = false
+                                })
+                            }
                         }
                     }
                     
                     Spacer()
                 }
                 .navigationBarTitle(Text("Challenge: RPC"))
+                
             }
         }
         .preferredColorScheme(.dark)
+    }
+    
+    func didTapButtonAt(_ index: Int) {
+        let won = didWon(indexTapped: index, indexPC: moveIndex)
+        
+        if won == shouldWin {
+            score += 1
+            if score == 10 {
+                showingAlert = true
+            }
+        }
+        
+        shouldWin = Bool.random() ? .win : .lose
+        moveIndex = Int.random(in: 0 ..< 3)
+    }
+    
+    func finishTheGame() {
+        shouldWin = Bool.random() ? .win : .lose
+        moveIndex = Int.random(in: 0 ..< 3)
+        score = 0
     }
     
     func didWon(indexTapped: Int, indexPC: Int) -> Result {
