@@ -45,7 +45,7 @@ struct ContentView: View {
                             .font(.system(size: 22, weight: .bold))
                     }
                     .frame(width: 100, height: 100, alignment: .center)
-                    .background(shouldWin == .win ? Color.green : Color.red)
+                    .background(shouldWin == .win ? Color.red : Color.green)
                     .cornerRadius(10)
                     
                     HStack {
@@ -64,7 +64,7 @@ struct ContentView: View {
                             .background(Color.gray)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
-                            .border(shouldWin == .win ? Color.red : Color.green, width: 4)
+                            .border(shouldWin == .win ? Color.green : Color.red, width: 4)
                             .cornerRadius(10)
                             .alert(isPresented: $showingAlert) {
                                 Alert(title: Text("Nice game!"), message: Text("Final score: \(score)"), dismissButton: .default(Text("Okidoki")) {
