@@ -39,7 +39,12 @@ struct ContentView: View {
                     HStack {
                         ForEach(0 ..< moves.count) { index in
                             Button(moves[index]) {
-                                print("button \(moves[index]) tapped")
+                                let won = didWon(indexTapped: index, indexPC: moveIndex)
+                                
+                                if won == shouldWin {
+                                    score += 1
+                                }
+                                
                                 shouldWin = Bool.random()
                                 moveIndex = Int.random(in: 0 ..< 3)
                             }
@@ -57,6 +62,19 @@ struct ContentView: View {
             }
         }
         .preferredColorScheme(.dark)
+    }
+    
+    func didWon(indexTapped: Int, indexPC: Int) -> Bool {
+        if indexTapped == indexPC {
+            print("empate")
+            return false
+        } else if moves[(indexTapped + 1) % 3] == moves[indexPC] {
+            print("perder")
+            return false
+        }
+        
+        print("ganhar")
+        return true
     }
     
 }
