@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    @State private var score = 0
     
     var body: some View {
         NavigationView {
@@ -26,6 +27,7 @@ struct ContentView: View {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
+                Text("Score: \(scoreCount())")
             }
             .navigationBarTitle(rootWord)
             .toolbar {
@@ -40,6 +42,14 @@ struct ContentView: View {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
         }
+    }
+    
+    func scoreCount() -> Int {
+        var count = 0
+        for word in usedWords {
+            count += word.count
+        }
+        return count
     }
     
     func addNewWord() {
@@ -68,6 +78,8 @@ struct ContentView: View {
     }
     
     func startGame() {
+        score = 0
+        usedWords.removeAll()
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
