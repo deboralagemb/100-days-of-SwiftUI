@@ -28,6 +28,13 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(rootWord)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Restart") {
+                        startGame()
+                    }
+                }
+            }
             .onAppear(perform: startGame)
             .alert(isPresented: $showingError) {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
@@ -65,7 +72,6 @@ struct ContentView: View {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
-                print(rootWord)
                 return
             }
         }
