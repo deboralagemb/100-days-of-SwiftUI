@@ -24,12 +24,18 @@ struct ContentView: View {
         
         return amountPerPerson
     }
-    
+    var grandTotal: Double {
+        let tipSelection = Double(tipPercentage)
+        let tipValue = checkAmount / 100 * tipSelection
+        let total = checkAmount + tipValue
+        return total
+    }
+
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Amount", // placeholder
+                    TextField("Amount",
                               value: $checkAmount,
                               format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                     .keyboardType(.decimalPad)
@@ -44,6 +50,8 @@ struct ContentView: View {
                 }
                 
                 Section {
+                    /// Commenting out for challenge
+                    /*
                     Picker("Tip percentage",
                            selection: $tipPercentage) {
                         ForEach(tipPercentages, id: \.self) {
@@ -51,13 +59,28 @@ struct ContentView: View {
                         }
                     }
                     .pickerStyle(.segmented)
+                    */
+                    
+                    Picker("Tip percentage",
+                           selection: $tipPercentage) {
+                        ForEach(0..<101, id: \.self) {
+                            Text($0, format: .percent)
+                        }
+                    }
+                    .pickerStyle(.navigationLink)
                 }
                 
-                Section {
+                Section("Amount per person") {
                     Text(totalPerPerson,
                          format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 }
                 .keyboardType(.decimalPad)
+                
+                Section("Amount for the check") {
+                    Text(grandTotal,
+                         format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                }
+
             }
             .navigationTitle("WeSplit")
             .toolbar {
