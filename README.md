@@ -17,7 +17,7 @@ Challenge days     |  0 / 1  | 0%
 
 Projects / Topics                                                                                                                                                            | Screenshots
 ---                                                                                                                                                                          |---
-[Project 1](01-Project1) - *WeSplit* <br/>(with challenges)                                         <br/><sub> Form, Section, NavigationView, @State property wrapper, TextField, Picker, ForEach </sub> | ![screen1](Project1 - WeSplit/Screenshots/screen01.png) ![screen2](Project1 - WeSplit/Screenshots/screen02.png) 
+[Project 1](Project1 - WeSplit) - *WeSplit* <br/>(with challenges)                                         <br/><sub> Form, Section, NavigationView, @State property wrapper, TextField, Picker, ForEach </sub> | ![screen1](Project1 - WeSplit/Screenshots/screen01.png) ![screen2](Project1 - WeSplit/Screenshots/screen02.png) 
 [Challenge Day 1](02-ChallengeDay1) - *Converter* 
 [Project 2](03-Project2) - *Guess the Flag* 
 [Project 3](04-Project3) - *View and Modifiers*
