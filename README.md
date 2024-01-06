@@ -14,7 +14,7 @@ Milestone Projects |  0 / 6  | 0%
 Challenge days     |  1 / 1  | 100%
 
 ## Preview
-https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project1-WeSplit/Screenshots/screen01.png
+
 Projects / Topics                                                                                                                                                            | Screenshots
 ---                                                                                                                                                                          |---
 [Project 1](Project1-WeSplit) - *WeSplit* <br/>(with challenges)                                         <br/><sub> Form, Section, NavigationView, @State property wrapper, TextField, Picker, ForEach </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project1-WeSplit/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project1-WeSplit/Screenshots/screen02.png" width="30%" height="30%"/> 
