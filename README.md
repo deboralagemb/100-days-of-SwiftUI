@@ -8,8 +8,8 @@ https://www.hackingwithswift.com/100/swiftui
 
 Type               | Number  | Completion
 :---               |  :---:  |   :---:
-Projects           | 2 / 19 | 10.53%
-Challenges         | 6 / 57 | 10.53%
+Projects           | 3 / 19 | 15.8%
+Challenges         | 9 / 57 | 15.8%
 Milestone Projects |  0 / 6  | 0%
 Challenge days     |  1 / 1  | 100%
 
@@ -18,9 +18,9 @@ Challenge days     |  1 / 1  | 100%
 Projects / Topics                                                                                                                                                            | Screenshots
 ---                                                                                                                                                                          |---
 [Project 1](Project1-WeSplit) - *WeSplit* <br/>(with challenges)                                         <br/><sub> Form, Section, NavigationView, @State property wrapper, TextField, Picker, ForEach </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project1-WeSplit/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project1-WeSplit/Screenshots/screen02.png" width="30%" height="30%"/> 
-[Challenge Day 1](02-ChallengeDay1) - *Converter* <sub> Temperature converter using all elements learned by far </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Challenge/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Challenge/Screenshots/screen02.png" width="30%" height="30%"/> 
-[Project 2](03-Project2) - *Guess the Flag* <br/>(with challenges)                                         <br/><sub> VStack, Image, Alert  </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project2-GuessTheFlag/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project2-GuessTheFlag/Screenshots/screen02.png" width="30%" height="30%"/> 
-[Project 3](04-Project3) - *View and Modifiers*
+[Challenge Day 1](Challenge) - *Converter* <sub> Temperature converter using all elements learned by far </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Challenge/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Challenge/Screenshots/screen02.png" width="30%" height="30%"/> 
+[Project 2](Project2-GuessTheFlag) - *Guess the Flag* <br/>(with challenges)                                         <br/><sub> VStack, Image, Alert  </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project2-GuessTheFlag/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project2-GuessTheFlag/Screenshots/screen02.png" width="30%" height="30%"/> 
+[Project 3](Project3-ViewsAndModifiers) - *View and Modifiers* <br/>(with challenges)                                         <br/><sub> Views, modifiers, composition, containers  </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project3-ViewsAndModifiers/Screenshots/screen01.png" width="30%" height="30%"/> 
 [Milestone Projects 1-3](05-Milestone-Projects1-3) - *Rock Paper Scissors* 
 [Project 4](06-Project4) - *BetterRest*
 [Project 5](07-Project5) - *Word Scramble*
