@@ -9,27 +9,9 @@ import CoreML
 import SwiftUI
 
 struct ContentView: View {
-    @State private var wakeUp = defaultWakeTime {
-        didSet {
-            calculateBedtime()
-        }
-    }
-    @State private var sleepAmount = 8.0 {
-        didSet {
-            calculateBedtime()
-        }
-    }
-    @State private var coffeeAmount = 1 {
-        didSet {
-            calculateBedtime()
-        }
-    }
-    
-    @State private var alertTitle = ""
-    @State private var alertMessage = ""
-    @State private var showingAlert = false
-    
-    @State private var bedtime: Date = .now
+    @State private var wakeUp = defaultWakeTime
+    @State private var sleepAmount = 8.0
+    @State private var coffeeAmount = 1
     
     static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -77,21 +59,18 @@ struct ContentView: View {
                     Text("Your ideal bedtime is:")
                         .font(.title2)
                     
-                    Text("\(bedtime.formatted(date: .omitted, time: .shortened))")
+                    Text("\(calculateBedtime)")
                         .font(.largeTitle)
                 }
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             }
             .navigationTitle("BetterRest")
-            .alert(alertTitle, isPresented: $showingAlert) {
-                Button("Ok") { }
-            } message: {
-                Text(alertMessage)
-            }
         }
     }
     
-    func calculateBedtime() {
+    var calculateBedtime: String {
+        var message: String
+        
         do {
             let config = MLModelConfiguration()
             let model = try SleepCalculator(configuration: config)
@@ -102,12 +81,12 @@ struct ContentView: View {
             
             let prediction = try model.prediction(wake: Int64(Double(hour + minute)), estimatedSleep: sleepAmount, coffee: Int64(Double(coffeeAmount)))
             
-            bedtime = wakeUp - prediction.actualSleep
+            message = (wakeUp - prediction.actualSleep).formatted(date: .omitted, time: .shortened)
         } catch {
-            alertTitle = "Error"
-            alertMessage = "Sorry, there was a problem calculating your bedtime."
-            showingAlert = true
+            message = "Sorry, there was a problem calculating your bedtime."
         }
+        
+        return message
     }
 }
 
