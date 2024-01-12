@@ -60,7 +60,17 @@ struct ContentView: View {
         }
         
         guard isReal(word: answer) else {
-            wordError(title: "Word not recognized", message: "You can;t just make them up!")
+            wordError(title: "Word not recognized", message: "You can't just make them up!")
+            return
+        }
+        
+        guard isNotTheSame(word: answer) else {
+            wordError(title: "Word is the same", message: "Your entered the same word! Be more original!")
+            return
+        }
+        
+        guard isLongEnough(word: answer) else {
+            wordError(title: "Word is too short", message: "Think of a bigger word! You can do it")
             return
         }
         
@@ -106,6 +116,14 @@ struct ContentView: View {
         let range = NSRange(location: 0, length: word.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         return misspelledRange.location == NSNotFound
+    }
+    
+    func isNotTheSame(word: String) -> Bool {
+        !(word == rootWord)
+    }
+    
+    func isLongEnough(word: String) -> Bool {
+        word.count > 3
     }
     
     func wordError(title: String, message: String) {
