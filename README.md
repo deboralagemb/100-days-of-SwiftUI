@@ -8,8 +8,8 @@ https://www.hackingwithswift.com/100/swiftui
 
 Type               | Number  | Completion
 :---               |  :---:  |   :---:
-Projects           | 4 / 19 | 21.05%
-Challenges         | 13 / 57 | 22.81%
+Projects           | 5 / 19 | 26.31%
+Challenges         | 16 / 57 | 28.07%
 Milestone Projects |  1 / 6  | 16.67%
 Challenge days     |  1 / 1  | 100%
 
@@ -18,12 +18,12 @@ Challenge days     |  1 / 1  | 100%
 Projects / Topics                                                                                                                                                            | Screenshots
 ---                                                                                                                                                                          |---
 [Project 1](Project1-WeSplit) - *WeSplit* <br/>(with challenges)                                         <br/><sub> Form, Section, NavigationView, @State property wrapper, TextField, Picker, ForEach </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project1-WeSplit/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project1-WeSplit/Screenshots/screen02.png" width="30%" height="30%"/> 
-[Challenge Day 1](Challenge) - *Converter* <sub> Temperature converter using all elements learned by far </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Challenge/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Challenge/Screenshots/screen02.png" width="30%" height="30%"/> 
+[Challenge Day 1](Challenge) - *Converter* <br/>(with challenges)                                         <br/><sub> Temperature converter using all elements learned by far </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Challenge/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Challenge/Screenshots/screen02.png" width="30%" height="30%"/> 
 [Project 2](Project2-GuessTheFlag) - *Guess the Flag* <br/>(with challenges)                                         <br/><sub> VStack, Image, Alert  </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project2-GuessTheFlag/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project2-GuessTheFlag/Screenshots/screen02.png" width="30%" height="30%"/> 
 [Project 3](Project3-ViewsAndModifiers) - *View and Modifiers* <br/>(with challenges)                                         <br/><sub> Views, modifiers, composition, containers  </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project3-ViewsAndModifiers/Screenshots/screen01.png" width="30%" height="30%"/> 
 [Milestone Projects 1-3](Milestone-Projects1-3) - *Rock Paper Scissors*  | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Milestone-Projects1-3/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Milestone-Projects1-3/Screenshots/screen02.png" width="30%" height="30%"/> 
 [Project 4](Project4-BetterRest) - *BetterRest*  <br/>(with challenges)                                         <br/><sub> Machine Learning, Dates (DatePicker, DateComponents, DateFormatter) Stepper, navigationBarItems() </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project4-BetterRest/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project4-BetterRest/Screenshots/screen02.png" width="30%" height="30%"/> 
-[Project 5](07-Project5) - *Word Scramble*
+[Project 5](Project5-WordScramble) - *Word Scramble*  <br/>(with challenges)                                         <br/><sub> List, onAppear, Bundle, fatalError(), UITextChecker | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project5-WordScramble/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project5-WordScramble/Screenshots/screen02.png" width="30%" height="30%"/> 
 [Project 6](08-Project6) - *Animations*
 [Milestone Projects 4-6](09-Milestone-Projects4-6) - *Multiplication Tables* 
 [Project 7](10-Project7) - *iExpense*
