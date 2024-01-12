@@ -17,12 +17,18 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    TextField("Enter your word", text: $newWord)
-                        .textInputAutocapitalization(.never)
+                    HStack {
+                        TextField("Enter your word", text: $newWord)
+                            .textInputAutocapitalization(.never)
+                        Text("Score: \(score)")
+                            .font(.headline)
+                    }
                 }
                 
                 Section {
@@ -79,12 +85,15 @@ struct ContentView: View {
         
         withAnimation {
             usedWords.insert(answer, at: 0)
+            score += answer.count
         }
 
         newWord = ""
     }
     
     func startGame() {
+        score = 0
+        
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
