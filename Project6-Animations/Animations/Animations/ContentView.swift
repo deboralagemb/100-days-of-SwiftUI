@@ -13,6 +13,8 @@ struct ContentView: View {
     @State private var animationAmountCustom2 = 1.0
     @State private var animationAmountCustom3 = 1.0
     @State private var animationAmountCustom4 = 1.0
+    @State private var animationBindings = 1.0
+    @State private var animationAmountExplicit = 0.0
     
     var body: some View {
         VStack {
@@ -89,6 +91,35 @@ struct ContentView: View {
                         animationAmountCustom4 = 2
                     }
             }
+            
+            Text("Animating Bindings")
+                .font(.title)
+            
+            HStack {
+                Stepper("Scale amount", value: $animationBindings.animation(), in: 1...10)
+                Button("6") {
+                    animationBindings += 1
+                }
+                .padding(40)
+                .background(.red)
+                .foregroundStyle(.white)
+                .clipShape(.circle)
+                .scaleEffect(animationBindings)
+            }
+            
+            Text("Explicit Animations")
+                .font(.title)
+
+            Button("7") {
+                withAnimation(.spring(duration: 1, bounce: 0.5)) {
+                    animationAmountExplicit += 360
+                }
+            }
+            .padding(30)
+            .background(.red)
+            .foregroundStyle(.white)
+            .clipShape(.circle)
+            .rotation3DEffect(.degrees(animationAmountExplicit), axis: (x: 0, y: 1, z: 0))
         }
     }
 }
