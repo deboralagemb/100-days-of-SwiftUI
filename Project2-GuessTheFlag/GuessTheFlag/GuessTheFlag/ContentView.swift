@@ -31,7 +31,8 @@ struct ContentView: View {
     @State var scoreTitle = ""
     
     // Animation
-    @State private var animationAmount = [0.0, 0.0, 0.0]
+    @State private var rotationAmount = [0.0, 0.0, 0.0]
+    @State private var fadeAmount = [1.0, 1.0, 1.0]
     
     var body: some View {
         ZStack {
@@ -60,16 +61,16 @@ struct ContentView: View {
                     ForEach(0..<3) { number in
                         Button {
                             withAnimation(.spring(duration: 1, bounce: 0.5)) {
-                                animationAmount[number] += 360
                                 flagTapped(number)
                             }
                         } label: {
                             FlagImage(country: countries[number])
                         }
                         .rotation3DEffect(
-                            .degrees(animationAmount[number]),
+                            .degrees(rotationAmount[number]),
                                                   axis: (x: 0.0, y: 1.0, z: 0.0)
                         )
+                        .blur(radius: (fadeAmount[number] - 1) * 3)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -110,8 +111,16 @@ struct ContentView: View {
         if number == correctAnswer {
             scoreTitle = "Correct"
             score += 1
+            rotationAmount[number] += 360
         } else {
             scoreTitle = "Wrong"
+        }
+        
+        var otherFlags = [0, 1, 2]
+        otherFlags.remove(at: number)
+        
+        otherFlags.forEach { otherFlag in
+            fadeAmount[otherFlag] += 1
         }
         
         if numberOfRounds < 8 {
@@ -125,6 +134,8 @@ struct ContentView: View {
         numberOfRounds += 1
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        rotationAmount = [0.0, 0.0, 0.0]
+        fadeAmount = [1.0, 1.0, 1.0]
     }
     
     func resetGame() {
