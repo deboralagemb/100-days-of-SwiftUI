@@ -15,6 +15,10 @@ enum Animations: String, CaseIterable {
     case implicitAnimation5
     case animatingBindings
     case explicitAnimation1
+    case animationStack
+    case animatingGestures
+    case viewsWithTransitions
+    case customizedTransitions
 }
 
 struct ContentView: View {
@@ -25,7 +29,11 @@ struct ContentView: View {
         "Implicit Animation 4",
         "Implicit Animation 5",
         "Animating Bindings",
-        "Explicit Animation 1"
+        "Explicit Animation 1",
+        "Controlling the Animation Stack",
+        "Animating Gestures",
+        "Showing and Hiding Views with Transitions",
+        "Customized Transitions"
     ]
 
     var body: some View {
@@ -63,6 +71,14 @@ struct DetailView: View {
                 AnimatingBindings()
             case .explicitAnimation1:
                 ExplicitAnimations()
+            case .animationStack:
+                AnimationStack()
+            case .animatingGestures:
+                AnimatingGestures()
+            case .viewsWithTransitions:
+                ViewsWithTransitions()
+            case .customizedTransitions:
+                CustomizedTransitions()
             }
         }
         .navigationTitle(animationTitle)
@@ -205,6 +221,114 @@ struct ExplicitAnimations: View {
         .foregroundStyle(.white)
         .clipShape(.circle)
         .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
+    }
+}
+
+struct AnimationStack: View {
+    @State private var enabled = false
+    
+    var body: some View {
+        Button("Tap Me") {
+            enabled.toggle()
+        }
+        .frame(width: 200, height: 200)
+        .background(enabled ? .blue : .red)
+        .animation(nil, value: enabled)
+        .foregroundStyle(.white)
+        .clipShape(.rect(cornerRadius: enabled ? 60 : 0))
+        .animation(.spring(duration: 1, bounce: 0.6), value: enabled)
+    }
+}
+
+struct AnimatingGestures: View {
+    let letters = Array("Hello SwiftUI")
+    @State private var enabled = false
+    @State private var dragAmount = CGSize.zero
+    
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(0..<letters.count, id: \.self) { num in
+                Text(String(letters[num]))
+                    .padding(5)
+                    .font(.title)
+                    .background(enabled ? .blue : .red)
+                    .offset(dragAmount)
+                    .animation(.linear.delay(Double(num) / 20), value: dragAmount)
+            }
+        }
+        .gesture(
+            DragGesture()
+                .onChanged { dragAmount = $0.translation }
+                .onEnded { _ in
+                    dragAmount = .zero
+                    enabled.toggle()
+                }
+        )
+    }
+}
+
+struct ViewsWithTransitions: View {
+    @State private var isShowingRed = false
+    
+    var body: some View {
+        VStack {
+            Button("Tap Me") {
+                withAnimation {
+                    isShowingRed.toggle()
+                }
+            }
+            
+            if isShowingRed {
+                Rectangle()
+                    .fill(.red)
+                    .frame(width: 200, height: 200)
+                    .transition(.asymmetric(insertion: .scale, removal: .opacity))
+            }
+        }
+    }
+}
+
+struct CustomizedTransitions: View {
+    @State private var isShowingRed = false
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(.blue)
+                .frame(width: 200, height: 200)
+            
+            if isShowingRed {
+                Rectangle()
+                    .fill(.red)
+                    .frame(width: 200, height: 200)
+                    .transition(.pivot)
+            }
+        }
+        .onTapGesture {
+            withAnimation {
+                isShowingRed.toggle()
+            }
+        }
+    }
+}
+
+extension AnyTransition {
+    static var pivot: AnyTransition {
+        .modifier(
+            active: CornerRotateModifier(amount: -90, anchor: .topLeading),
+            identity: CornerRotateModifier(amount: 0, anchor: .topLeading)
+        )
+    }
+}
+
+struct CornerRotateModifier: ViewModifier {
+    let amount: Double
+    let anchor: UnitPoint
+
+    func body(content: Content) -> some View {
+        content
+            .rotationEffect(.degrees(amount), anchor: anchor)
+            .clipped()
     }
 }
 
