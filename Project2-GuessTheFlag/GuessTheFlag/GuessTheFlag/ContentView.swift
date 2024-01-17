@@ -30,6 +30,9 @@ struct ContentView: View {
     @State var showingEndOfGame = false
     @State var scoreTitle = ""
     
+    // Animation
+    @State private var animationAmount = [0.0, 0.0, 0.0]
+    
     var body: some View {
         ZStack {
             RadialGradient(stops: [
@@ -56,10 +59,17 @@ struct ContentView: View {
                     
                     ForEach(0..<3) { number in
                         Button {
-                            flagTapped(number)
+                            withAnimation(.spring(duration: 1, bounce: 0.5)) {
+                                animationAmount[number] += 360
+                                flagTapped(number)
+                            }
                         } label: {
                             FlagImage(country: countries[number])
                         }
+                        .rotation3DEffect(
+                            .degrees(animationAmount[number]),
+                                                  axis: (x: 0.0, y: 1.0, z: 0.0)
+                        )
                     }
                 }
                 .frame(maxWidth: .infinity)
