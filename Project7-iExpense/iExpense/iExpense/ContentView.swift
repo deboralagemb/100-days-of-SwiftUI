@@ -39,31 +39,35 @@ class Expenses {
 struct ContentView: View {
     
     @State private var expenses = Expenses()
-    
     @State private var showingAddExpense = false
+    let types = ["Business", "Personal"]
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            
-                            Text(item.type)
+                ForEach(types, id: \.self) { type in
+                    Section(type) {
+                        ForEach(expenses.items.filter { $0.type == type }) { item in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(item.name)
+                                        .font(.headline)
+                                    
+                                    Text(item.type)
+                                }
+                                
+                                Spacer()
+                                
+                                Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                                    .foregroundStyle(
+                                        item.amount < 10 ? .green : (item.amount < 100 ? .yellow : .red)
+                                    )
+                                    .fontWeight(.semibold)
+                            }
                         }
-                        
-                        Spacer()
-                        
-                        Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                            .foregroundStyle(
-                                item.amount < 10 ? .green : (item.amount < 100 ? .yellow : .red)
-                            )
-                            .fontWeight(.semibold)
+                        .onDelete(perform: removeItems)
                     }
                 }
-                .onDelete(perform: removeItems)
             }
             .navigationTitle("iExpense")
             .toolbar {
