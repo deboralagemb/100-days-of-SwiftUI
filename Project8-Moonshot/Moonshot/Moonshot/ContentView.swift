@@ -8,47 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
-    let missions: [Mission] = Bundle.main.decode("missions.json")
-    
-    let columns = [
-        GridItem(.adaptive(minimum: 150))
-    ]
+    private let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    private let missions: [Mission] = Bundle.main.decode("missions.json")
+    @State private var showingGrid: Bool = true
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVGrid(columns: columns) {
-                    ForEach(missions) { mission in
-                        NavigationLink {
-                            MissionView(mission: mission, astronauts: astronauts)
-                        } label: {
-                            VStack {
-                                Image(mission.image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 100)
-                                    .padding()
-                                
-                                VStack(alignment: .leading) {
-                                    Text(mission.displayName)
-                                        .font(.headline)
-                                        .foregroundStyle(.white)
-                                    
-                                    Text(mission.formattedLaunchDate)
-                                        .font(.caption)
-                                        .foregroundStyle(.white.opacity(0.5))
-                                }
-                                .padding(.vertical)
-                                .frame(maxWidth: .infinity)
-                                .background(.lightBackGround)
-                            }
-                            .clipShape(.rect(cornerRadius: 10))
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(.lightBackGround)
-                            }
-                        }
+                Group {
+                    if showingGrid {
+                        GridLayout(missions: missions, astronauts: astronauts)
+                    } else {
+                        ListLayout(missions: missions, astronauts: astronauts)
                     }
                 }
                 .padding([.horizontal, .bottom])
@@ -59,7 +30,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Button("Toggle display") {
-                        print("Pressed")
+                        showingGrid.toggle()
                     }
                 }
             }
