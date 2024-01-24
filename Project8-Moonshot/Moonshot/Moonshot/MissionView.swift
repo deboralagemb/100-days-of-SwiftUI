@@ -26,6 +26,10 @@ struct MissionView: View {
                         width * 0.6
                     }
                 
+                Text("Launch date: \(mission.formattedLaunchDate)")
+                    .foregroundStyle(.gray)
+                    .font(.title3.bold())
+                
                 VStack(alignment: .leading) {
                     Rectangle()
                         .frame(height: 2)
