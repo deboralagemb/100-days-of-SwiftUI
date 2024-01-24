@@ -56,6 +56,13 @@ struct ContentView: View {
             .navigationTitle("Moonshot")
             .background(.darkBackground)
             .preferredColorScheme(.dark)
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Button("Toggle display") {
+                        print("Pressed")
+                    }
+                }
+            }
         }
     }
 }

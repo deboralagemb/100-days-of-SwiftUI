@@ -114,19 +114,12 @@
 		D51687A42B5FF24200C57D69 /* Moonshot */ = {
 			isa = PBXGroup;
 			children = (
+				D54862AC2B61889800DB80B6 /* Shared */,
+				D54862AB2B61887300DB80B6 /* Resources */,
+				D54862AA2B61884900DB80B6 /* Mission */,
+				D54862A92B61850800DB80B6 /* Astronaut */,
 				D51687A52B5FF24200C57D69 /* MoonshotApp.swift */,
 				D51687A72B5FF24200C57D69 /* ContentView.swift */,
-				D51687DB2B60686500C57D69 /* MissionView.swift */,
-				D51687DD2B606FC000C57D69 /* AstronautView.swift */,
-				D54862A72B61824D00DB80B6 /* AstronautCellView.swift */,
-				D54862A52B6181B600DB80B6 /* RectangleDividerView.swift */,
-				D51687D72B60416100C57D69 /* Mission.swift */,
-				D51687D32B60351200C57D69 /* Astronaut.swift */,
-				D51687D52B6035AB00C57D69 /* Bundle-Decodable.swift */,
-				D51687D92B605CA500C57D69 /* Color-Theme.swift */,
-				D51687D02B60344A00C57D69 /* astronauts.json */,
-				D51687CF2B60344A00C57D69 /* missions.json */,
-				D51687A92B5FF24300C57D69 /* Assets.xcassets */,
 				D51687AB2B5FF24300C57D69 /* Preview Content */,
 			);
 			path = Moonshot;
@@ -155,6 +148,45 @@
 				D51687C22B5FF24300C57D69 /* MoonshotUITestsLaunchTests.swift */,
 			);
 			path = MoonshotUITests;
+			sourceTree = "<group>";
+		};
+		D54862A92B61850800DB80B6 /* Astronaut */ = {
+			isa = PBXGroup;
+			children = (
+				D51687D32B60351200C57D69 /* Astronaut.swift */,
+				D51687DD2B606FC000C57D69 /* AstronautView.swift */,
+				D54862A72B61824D00DB80B6 /* AstronautCellView.swift */,
+			);
+			path = Astronaut;
+			sourceTree = "<group>";
+		};
+		D54862AA2B61884900DB80B6 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				D54862A52B6181B600DB80B6 /* RectangleDividerView.swift */,
+				D51687D72B60416100C57D69 /* Mission.swift */,
+				D51687DB2B60686500C57D69 /* MissionView.swift */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		D54862AB2B61887300DB80B6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D51687D02B60344A00C57D69 /* astronauts.json */,
+				D51687CF2B60344A00C57D69 /* missions.json */,
+				D51687A92B5FF24300C57D69 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D54862AC2B61889800DB80B6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D51687D52B6035AB00C57D69 /* Bundle-Decodable.swift */,
+				D51687D92B605CA500C57D69 /* Color-Theme.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
