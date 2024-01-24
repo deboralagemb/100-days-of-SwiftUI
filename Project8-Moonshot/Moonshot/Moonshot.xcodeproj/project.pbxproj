@@ -22,6 +22,8 @@
 		D51687DA2B605CA500C57D69 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51687D92B605CA500C57D69 /* Color-Theme.swift */; };
 		D51687DC2B60686500C57D69 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51687DB2B60686500C57D69 /* MissionView.swift */; };
 		D51687DE2B606FC000C57D69 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51687DD2B606FC000C57D69 /* AstronautView.swift */; };
+		D54862A62B6181B600DB80B6 /* RectangleDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862A52B6181B600DB80B6 /* RectangleDividerView.swift */; };
+		D54862A82B61824D00DB80B6 /* AstronautCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862A72B61824D00DB80B6 /* AstronautCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		D51687D92B605CA500C57D69 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
 		D51687DB2B60686500C57D69 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		D51687DD2B606FC000C57D69 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		D54862A52B6181B600DB80B6 /* RectangleDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleDividerView.swift; sourceTree = "<group>"; };
+		D54862A72B61824D00DB80B6 /* AstronautCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				D51687A72B5FF24200C57D69 /* ContentView.swift */,
 				D51687DB2B60686500C57D69 /* MissionView.swift */,
 				D51687DD2B606FC000C57D69 /* AstronautView.swift */,
+				D54862A72B61824D00DB80B6 /* AstronautCellView.swift */,
+				D54862A52B6181B600DB80B6 /* RectangleDividerView.swift */,
 				D51687D72B60416100C57D69 /* Mission.swift */,
 				D51687D32B60351200C57D69 /* Astronaut.swift */,
 				D51687D52B6035AB00C57D69 /* Bundle-Decodable.swift */,
@@ -284,6 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D51687DC2B60686500C57D69 /* MissionView.swift in Sources */,
+				D54862A62B6181B600DB80B6 /* RectangleDividerView.swift in Sources */,
+				D54862A82B61824D00DB80B6 /* AstronautCellView.swift in Sources */,
 				D51687D42B60351200C57D69 /* Astronaut.swift in Sources */,
 				D51687DE2B606FC000C57D69 /* AstronautView.swift in Sources */,
 				D51687DA2B605CA500C57D69 /* Color-Theme.swift in Sources */,
