@@ -60,8 +60,12 @@ struct ContentView: View {
                     DetailView(number: i)
                 }
             
-            NavigationLink(destination:  CustomToolbar()) {
+            NavigationLink(destination: CustomToolbar()) {
                 Text("Go to Custom Toolbar")
+            }
+            
+            NavigationLink(destination: ToolbarButton()) {
+                Text("Go to Toolbar Buttons Placements")
             }
         }
     }
