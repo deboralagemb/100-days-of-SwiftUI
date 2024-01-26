@@ -59,6 +59,10 @@ struct ContentView: View {
                 .navigationDestination(for: Int.self) { i in
                     DetailView(number: i)
                 }
+            
+            NavigationLink(destination:  CustomToolbar()) {
+                Text("Go to Custom Toolbar")
+            }
         }
     }
 }

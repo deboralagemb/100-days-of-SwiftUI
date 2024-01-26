@@ -14,6 +14,7 @@
 		D54862D02B619B7A00DB80B6 /* NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862CF2B619B7A00DB80B6 /* NavigationTests.swift */; };
 		D54862DA2B619B7A00DB80B6 /* NavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862D92B619B7A00DB80B6 /* NavigationUITests.swift */; };
 		D54862DC2B619B7A00DB80B6 /* NavigationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862DB2B619B7A00DB80B6 /* NavigationUITestsLaunchTests.swift */; };
+		D54862EA2B632BD300DB80B6 /* CustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862E92B632BD300DB80B6 /* CustomToolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		D54862D52B619B7A00DB80B6 /* NavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54862D92B619B7A00DB80B6 /* NavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITests.swift; sourceTree = "<group>"; };
 		D54862DB2B619B7A00DB80B6 /* NavigationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D54862E92B632BD300DB80B6 /* CustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				D54862C02B619B7900DB80B6 /* ContentView.swift */,
 				D54862C22B619B7A00DB80B6 /* Assets.xcassets */,
 				D54862C42B619B7A00DB80B6 /* Preview Content */,
+				D54862E92B632BD300DB80B6 /* CustomToolbar.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D54862C12B619B7900DB80B6 /* ContentView.swift in Sources */,
+				D54862EA2B632BD300DB80B6 /* CustomToolbar.swift in Sources */,
 				D54862BF2B619B7900DB80B6 /* NavigationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
