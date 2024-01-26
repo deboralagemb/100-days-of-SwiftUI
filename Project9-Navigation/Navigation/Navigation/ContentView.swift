@@ -67,6 +67,10 @@ struct ContentView: View {
             NavigationLink(destination: ToolbarButton()) {
                 Text("Go to Toolbar Buttons Placements")
             }
+            
+            NavigationLink(destination: EditableTitle()) {
+                Text("Go to Editable Title")
+            }
         }
     }
 }

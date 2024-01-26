@@ -16,6 +16,7 @@
 		D54862DC2B619B7A00DB80B6 /* NavigationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862DB2B619B7A00DB80B6 /* NavigationUITestsLaunchTests.swift */; };
 		D54862EA2B632BD300DB80B6 /* CustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862E92B632BD300DB80B6 /* CustomToolbar.swift */; };
 		D54862EC2B63364200DB80B6 /* ToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862EB2B63364200DB80B6 /* ToolbarButton.swift */; };
+		D54862EE2B6337D800DB80B6 /* EditableTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54862ED2B6337D800DB80B6 /* EditableTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D54862DB2B619B7A00DB80B6 /* NavigationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D54862E92B632BD300DB80B6 /* CustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbar.swift; sourceTree = "<group>"; };
 		D54862EB2B63364200DB80B6 /* ToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButton.swift; sourceTree = "<group>"; };
+		D54862ED2B6337D800DB80B6 /* EditableTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				D54862C42B619B7A00DB80B6 /* Preview Content */,
 				D54862E92B632BD300DB80B6 /* CustomToolbar.swift */,
 				D54862EB2B63364200DB80B6 /* ToolbarButton.swift */,
+				D54862ED2B6337D800DB80B6 /* EditableTitle.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D54862C12B619B7900DB80B6 /* ContentView.swift in Sources */,
+				D54862EE2B6337D800DB80B6 /* EditableTitle.swift in Sources */,
 				D54862EC2B63364200DB80B6 /* ToolbarButton.swift in Sources */,
 				D54862EA2B632BD300DB80B6 /* CustomToolbar.swift in Sources */,
 				D54862BF2B619B7900DB80B6 /* NavigationApp.swift in Sources */,
