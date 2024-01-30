@@ -8,9 +8,8 @@ https://www.hackingwithswift.com/100/swiftui
 
 Type               | Number  | Completion
 :---               |  :---:  |   :---:
-Projects           | 8 / 19 | 42.10%
-Challenges         | 22 / 57 | 38.59%
-Milestone Projects |  1 / 6  | 16.67%
+Projects           | 9 / 19 | 42.10%
+Milestone Projects |  3 / 6  | 50.00%
 Challenge days     |  1 / 1  | 100%
 
 ## Preview
@@ -28,8 +27,8 @@ Projects / Topics                                                               
 [Milestone Projects 4-6](09-Milestone-Projects4-6) - *Multiplication Tables* 
 [Project 7](10-Project7) - *iExpense*   <br/>(with challenges)                                         <br/><sub> UserDefaults, Codable, sheet(), onDelete(), @Observable, @Environment </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project7-iExpense/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project7-iExpense/Screenshots/screen02.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project7-iExpense/Screenshots/screen03.png" width="30%" height="30%"/> 
 [Project 8](11-Project8) - *Moonshot*   <br/>(with challenges)                                         <br/><sub> Grid, ScrollView, Navigation, Codable hierarchy, Generics </sub> | <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project8-Moonshot/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project8-Moonshot/Screenshots/screen02.png" width="30%" height="30%"/> <br/> <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project8-Moonshot/Screenshots/screen03.png" width="30%" height="30%"/> <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project8-Moonshot/Screenshots/screen04.png" width="30%" height="30%"/>
-[Project 9](12-Project9) - *Drawing* 
-[Milestone Projects 7-9](13-Milestone-Projects7-9) - *Habit Tracker* 
+[Project 9](12-Project9) - *Navigation*   <br/>(with challenges)                                         <br/><sub> programmatic navigation, NavigationPath, Codable support, Custom navigation bar appearances, Toolbar placements </sub> |  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project9-Navigation/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project9-Navigation/Screenshots/screen02.png" width="30%" height="30%"/> <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Project9-Navigation/Screenshots/screen03.png" width="30%" height="30%"/>
+[Milestone Projects 7-9](13-Milestone-Projects7-9) - *Habit Tracker*  |  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Milestone-Projects7-9/Screenshots/screen01.png" width="30%" height="30%"/>  <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Milestone-Projects7-9/Screenshots/screen02.png" width="30%" height="30%"/>  <br/> <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Milestone-Projects7-9/Screenshots/screen03.png" width="30%" height="30%"/> <img src="https://github.com/deboralagemb/100-days-of-SwiftUI/blob/main/Milestone-Projects7-9/Screenshots/screen04.png" width="30%" height="30%"/> 
 [Project 10](14-Project10) - *Cupcakes Corner*
 [Project 11](15-Project11) - *Bookworm* 
 [Project 12](16-Project12) - *Core Data*
