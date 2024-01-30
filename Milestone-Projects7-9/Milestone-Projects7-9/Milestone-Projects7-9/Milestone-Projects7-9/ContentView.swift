@@ -20,15 +20,16 @@ struct ContentView: View {
             List {
                 ForEach(habits.activities) { habit in
                     HStack {
-                        VStack(alignment: .leading) {
-                            Text(habit.title)
-                                .foregroundStyle(.primary)
-                            Text(habit.description)
-                                .foregroundStyle(.secondary)
+                        NavigationLink(destination: ActivityDetailView(activity: habit)) {
+                            VStack(alignment: .leading) {
+                                Text(habit.title)
+                                    .foregroundStyle(.primary)
+                                Text(habit.description)
+                                    .foregroundStyle(.secondary)
+                                Text(habit.timesCompleted.formatted())
+                                    .foregroundStyle(habit.timesCompleted > 0 ? .green : .red)
+                            }
                         }
-                        Spacer()
-                        Text(habit.timesCompleted.formatted())
-                            .foregroundStyle(habit.timesCompleted > 0 ? .green : .red)
                     }
                 }
                 .onDelete(perform: removeItems)

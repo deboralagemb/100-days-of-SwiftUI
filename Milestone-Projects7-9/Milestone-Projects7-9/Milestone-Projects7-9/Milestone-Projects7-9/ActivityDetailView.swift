@@ -13,18 +13,12 @@ struct ActivityDetailView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Title") {
-                    Text(activity.title)
-                }
-                
-                Section("Description") {
-                    Text(activity.description)
-                }
-                
-                Section("Times completed") {
-                    Text("\(activity.timesCompleted) times")
+                Section("Details") {
+                    Text("\(activity.description)")
+                    Text("Achieved \(activity.timesCompleted) times")
                 }
             }
+            .navigationTitle(activity.title)
         }
     }
 }
