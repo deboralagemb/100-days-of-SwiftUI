@@ -17,18 +17,21 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            List(habits.activities) { habit in
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(habit.title)
-                            .foregroundStyle(.primary)
-                        Text(habit.description)
-                            .foregroundStyle(.secondary)
+            List {
+                ForEach(habits.activities) { habit in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(habit.title)
+                                .foregroundStyle(.primary)
+                            Text(habit.description)
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        Text(habit.timesCompleted.formatted())
+                            .foregroundStyle(habit.timesCompleted > 0 ? .green : .red)
                     }
-                    Spacer()
-                    Text(habit.timesCompleted.formatted())
-                        .foregroundStyle(habit.timesCompleted > 0 ? .green : .red)
                 }
+                .onDelete(perform: removeItems)
             }
             .navigationTitle("Habit tracker")
             .toolbar {
@@ -42,6 +45,10 @@ struct ContentView: View {
                 AddHabitView(habits: habits)
             }
         }
+    }
+    
+    func removeItems(at offsets: IndexSet) {
+        habits.activities.remove(atOffsets: offsets)
     }
 }
 
