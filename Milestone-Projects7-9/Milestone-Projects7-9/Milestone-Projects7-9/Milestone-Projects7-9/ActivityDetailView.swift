@@ -8,22 +8,33 @@
 import SwiftUI
 
 struct ActivityDetailView: View {
-    var activity: Activity
+    @Environment(\.dismiss) var dismiss
+    
+    @State var activity: Activity
+    var habits: Habits
     
     var body: some View {
         NavigationStack {
             Form {
                 Section("Details") {
                     Text("\(activity.description)")
-                    Text("Achieved \(activity.timesCompleted) times")
+                    
+                    Stepper("Achieved \(activity.timesCompleted) times", value: $activity.timesCompleted, in:  0...100, step: 1)
                 }
             }
             .navigationTitle(activity.title)
+            .onDisappear {
+                guard let index = habits.activities.firstIndex(where: { $0.id == activity.id }) else { return }
+                habits.activities[index] = activity
+            }
         }
     }
 }
 
 #Preview {
     let activity = Activity(title: "Title", description: "Description", timesCompleted: 0)
-    return ActivityDetailView(activity: activity)
+    let habits = Habits()
+    habits.activities.append(activity)
+    
+    return ActivityDetailView(activity: activity, habits: habits)
 }

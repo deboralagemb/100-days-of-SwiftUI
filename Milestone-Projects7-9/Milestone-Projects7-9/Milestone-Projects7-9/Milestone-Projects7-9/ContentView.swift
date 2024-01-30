@@ -20,7 +20,7 @@ struct ContentView: View {
             List {
                 ForEach(habits.activities) { habit in
                     HStack {
-                        NavigationLink(destination: ActivityDetailView(activity: habit)) {
+                        NavigationLink(destination: ActivityDetailView(activity: habit, habits: habits)) {
                             VStack(alignment: .leading) {
                                 Text(habit.title)
                                     .foregroundStyle(.primary)
