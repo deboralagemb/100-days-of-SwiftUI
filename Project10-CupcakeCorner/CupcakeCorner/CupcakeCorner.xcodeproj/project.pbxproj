@@ -104,9 +104,9 @@
 				D548637A2B69DC0100DB80B6 /* ContentView.swift */,
 				D59C53312B6ABB9000E42184 /* AddressView.swift */,
 				D59C53332B6AF52700E42184 /* CheckoutView.swift */,
+				D54863A42B6AB74A00DB80B6 /* Order.swift */,
 				D548637C2B69DC0200DB80B6 /* Assets.xcassets */,
 				D548637E2B69DC0200DB80B6 /* Preview Content */,
-				D54863A42B6AB74A00DB80B6 /* Order.swift */,
 			);
 			path = CupcakeCorner;
 			sourceTree = "<group>";
