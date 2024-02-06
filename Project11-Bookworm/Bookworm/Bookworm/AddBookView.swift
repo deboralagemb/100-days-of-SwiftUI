@@ -18,6 +18,13 @@ struct AddBookView: View {
     @State private var review = ""
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
+    var isValidBook: Bool {
+        if title.isOnlySpaces || author.isOnlySpaces || review.isOnlySpaces {
+            return false
+        }
+        
+        return true
+    }
     
     var body: some View {
         NavigationStack {
@@ -45,6 +52,7 @@ struct AddBookView: View {
                         dismiss()
                     }
                 }
+                .disabled(isValidBook == false)
             }
             .navigationTitle("Add Book")
         }
@@ -53,4 +61,10 @@ struct AddBookView: View {
 
 #Preview {
     AddBookView()
+}
+
+extension String {
+    var isOnlySpaces: Bool {
+        self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
 }
