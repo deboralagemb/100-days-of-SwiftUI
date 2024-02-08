@@ -16,6 +16,7 @@
 		D5E375462B745401004389CF /* SwiftDataProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E375452B745401004389CF /* SwiftDataProjectUITestsLaunchTests.swift */; };
 		D5E375532B745440004389CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E375522B745440004389CF /* User.swift */; };
 		D5E375572B75972E004389CF /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E375562B75972E004389CF /* UsersView.swift */; };
+		D5E3755B2B759E99004389CF /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E3755A2B759E99004389CF /* Job.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D5E375452B745401004389CF /* SwiftDataProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D5E375522B745440004389CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D5E375562B75972E004389CF /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		D5E3755A2B759E99004389CF /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E375522B745440004389CF /* User.swift */,
+				D5E3755A2B759E99004389CF /* Job.swift */,
 				D5E375282B745400004389CF /* SwiftDataProjectApp.swift */,
 				D5E3752A2B745400004389CF /* ContentView.swift */,
 				D5E375562B75972E004389CF /* UsersView.swift */,
@@ -267,6 +270,7 @@
 				D5E375292B745400004389CF /* SwiftDataProjectApp.swift in Sources */,
 				D5E375532B745440004389CF /* User.swift in Sources */,
 				D5E375572B75972E004389CF /* UsersView.swift in Sources */,
+				D5E3755B2B759E99004389CF /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
