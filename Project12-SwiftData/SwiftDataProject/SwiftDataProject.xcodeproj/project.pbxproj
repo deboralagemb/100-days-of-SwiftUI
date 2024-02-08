@@ -15,6 +15,7 @@
 		D5E375442B745401004389CF /* SwiftDataProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E375432B745401004389CF /* SwiftDataProjectUITests.swift */; };
 		D5E375462B745401004389CF /* SwiftDataProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E375452B745401004389CF /* SwiftDataProjectUITestsLaunchTests.swift */; };
 		D5E375532B745440004389CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E375522B745440004389CF /* User.swift */; };
+		D5E375572B75972E004389CF /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E375562B75972E004389CF /* UsersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		D5E375432B745401004389CF /* SwiftDataProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataProjectUITests.swift; sourceTree = "<group>"; };
 		D5E375452B745401004389CF /* SwiftDataProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D5E375522B745440004389CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D5E375562B75972E004389CF /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +98,12 @@
 		D5E375272B745400004389CF /* SwiftDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				D5E375522B745440004389CF /* User.swift */,
 				D5E375282B745400004389CF /* SwiftDataProjectApp.swift */,
 				D5E3752A2B745400004389CF /* ContentView.swift */,
+				D5E375562B75972E004389CF /* UsersView.swift */,
 				D5E3752C2B745401004389CF /* Assets.xcassets */,
 				D5E3752E2B745401004389CF /* Preview Content */,
-				D5E375522B745440004389CF /* User.swift */,
 			);
 			path = SwiftDataProject;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				D5E3752B2B745400004389CF /* ContentView.swift in Sources */,
 				D5E375292B745400004389CF /* SwiftDataProjectApp.swift in Sources */,
 				D5E375532B745440004389CF /* User.swift in Sources */,
+				D5E375572B75972E004389CF /* UsersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
