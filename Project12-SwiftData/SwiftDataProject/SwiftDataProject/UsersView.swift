@@ -22,7 +22,7 @@ struct UsersView: View {
                 Text(String(user.jobs.count))
                     .fontWeight(.black)
                     .padding(.horizontal, 10)
-                    .padding(.horizontal, 5)
+                    .padding(.vertical, 5)
                     .background(.blue)
                     .foregroundStyle(.white)
                     .clipShape(.capsule)
