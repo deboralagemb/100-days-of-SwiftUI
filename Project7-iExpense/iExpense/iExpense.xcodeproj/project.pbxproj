@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D51E742D2B7AA31A00E2A6F9 /* AmountIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51E742C2B7AA31A00E2A6F9 /* AmountIconView.swift */; };
+		D51E742F2B7AA3BE00E2A6F9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51E742E2B7AA3BE00E2A6F9 /* ListView.swift */; };
 		D59510222B5EB6AE0069FC25 /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59510212B5EB6AE0069FC25 /* iExpenseApp.swift */; };
 		D59510242B5EB6AE0069FC25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59510232B5EB6AE0069FC25 /* ContentView.swift */; };
 		D59510262B5EB6AF0069FC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D59510252B5EB6AF0069FC25 /* Assets.xcassets */; };
@@ -15,6 +17,7 @@
 		D595103D2B5EB6AF0069FC25 /* iExpenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595103C2B5EB6AF0069FC25 /* iExpenseUITests.swift */; };
 		D595103F2B5EB6AF0069FC25 /* iExpenseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595103E2B5EB6AF0069FC25 /* iExpenseUITestsLaunchTests.swift */; };
 		D595104C2B5F11CC0069FC25 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595104B2B5F11CC0069FC25 /* AddView.swift */; };
+		D5E3755F2B7A8F05004389CF /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E3755E2B7A8F05004389CF /* ExpenseItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D51E742C2B7AA31A00E2A6F9 /* AmountIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountIconView.swift; sourceTree = "<group>"; };
+		D51E742E2B7AA3BE00E2A6F9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		D595101E2B5EB6AE0069FC25 /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59510212B5EB6AE0069FC25 /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		D59510232B5EB6AE0069FC25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		D595103C2B5EB6AF0069FC25 /* iExpenseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseUITests.swift; sourceTree = "<group>"; };
 		D595103E2B5EB6AF0069FC25 /* iExpenseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D595104B2B5F11CC0069FC25 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		D5E3755E2B7A8F05004389CF /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				D59510212B5EB6AE0069FC25 /* iExpenseApp.swift */,
+				D5E3755E2B7A8F05004389CF /* ExpenseItem.swift */,
 				D59510232B5EB6AE0069FC25 /* ContentView.swift */,
 				D595104B2B5F11CC0069FC25 /* AddView.swift */,
+				D51E742C2B7AA31A00E2A6F9 /* AmountIconView.swift */,
+				D51E742E2B7AA3BE00E2A6F9 /* ListView.swift */,
 				D59510252B5EB6AF0069FC25 /* Assets.xcassets */,
 				D59510272B5EB6AF0069FC25 /* Preview Content */,
 			);
@@ -262,7 +271,10 @@
 			files = (
 				D59510242B5EB6AE0069FC25 /* ContentView.swift in Sources */,
 				D59510222B5EB6AE0069FC25 /* iExpenseApp.swift in Sources */,
+				D51E742F2B7AA3BE00E2A6F9 /* ListView.swift in Sources */,
+				D51E742D2B7AA31A00E2A6F9 /* AmountIconView.swift in Sources */,
 				D595104C2B5F11CC0069FC25 /* AddView.swift in Sources */,
+				D5E3755F2B7A8F05004389CF /* ExpenseItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

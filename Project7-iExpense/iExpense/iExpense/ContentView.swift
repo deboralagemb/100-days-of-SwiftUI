@@ -5,92 +5,58 @@
 //  Created by Débora Lage on 22/01/24.
 //
 
+import SwiftData
 import SwiftUI
 
-struct ExpenseItem: Identifiable, Codable {
-    var id = UUID()
-    var name: String
-    var type: String
-    var amount: Double
-}
-
-@Observable
-class Expenses {
-    var items = [ExpenseItem]() {
-        didSet {
-            if let encoded = try? JSONEncoder().encode(items) {
-                UserDefaults.standard.set(encoded, forKey: "Items")
-            }
-        }
-    }
-    
-    init() {
-        if let savedData = UserDefaults.standard.data(forKey: "Items") {
-            if let decodedItems = try? JSONDecoder().decode([ExpenseItem].self, from: savedData) {
-                items = decodedItems
-                return
-            }
-        }
-        
-        items = []
-    }
-}
-
 struct ContentView: View {
+    @State private var sortOrder = [
+        SortDescriptor(\ExpenseItem.name),
+        SortDescriptor(\ExpenseItem.amount)
+    ]
     
-    @State private var expenses = Expenses()
-    @State private var showingAddExpense = false
-    let types = ["Business", "Personal"]
+    @State private var filterTypes = types
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(types, id: \.self) { type in
-                    Section(type) {
-                        ForEach(expenses.items.filter { $0.type == type }) { item in
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text(item.name)
-                                        .font(.headline)
-                                    
-                                    Text(item.type)
-                                }
-                                
-                                Spacer()
-                                
-                                Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                                    .foregroundStyle(
-                                        item.amount < 10 ? .green : (item.amount < 100 ? .yellow : .red)
-                                    )
-                                    .fontWeight(.semibold)
-                            }
-                        }
-                        .onDelete(perform: removeItems)
-                    }
-                }
-            }
+            ListView(filterTypes: filterTypes, sortOrder: sortOrder)
             .navigationTitle("iExpense")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink(destination: AddView(expenses: expenses)) {
-                        Button("Add Expense", systemImage: "plus") {
-                            //                        showingAddExpense = true
-                        }
+                NavigationLink {
+                    AddView()
+                } label: {
+                    Image(systemName: "plus")
+                }
+                
+                Menu("Filter", systemImage: "line.3.horizontal.decrease.circle") {
+                    Picker("Filter", selection: $filterTypes) {
+                        Text("All")
+                            .tag(types)
+                        
+                        Text("Personal only")
+                            .tag(["Personal"])
+
+                        Text("Business only")
+                            .tag(["Business"])
                     }
                 }
                 
-                ToolbarItem(placement: .topBarLeading) {
-                    EditButton()
+                Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                    Picker("Sort", selection: $sortOrder) {
+                        Text("Sort by Name")
+                            .tag([
+                                SortDescriptor(\ExpenseItem.name),
+                                SortDescriptor(\ExpenseItem.amount)
+                            ])
+                        
+                        Text("Sort by Amount")
+                            .tag([
+                                SortDescriptor(\ExpenseItem.amount),
+                                SortDescriptor(\ExpenseItem.name)
+                            ])
+                    }
                 }
             }
-//            .sheet(isPresented: $showingAddExpense) {
-//                AddView(expenses: expenses)
-//            }
         }
-    }
-    
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
     }
 }
 
